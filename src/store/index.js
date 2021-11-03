@@ -16,3 +16,5 @@ const store = new Vuex.Store({
 })
 
 export const useStore = () => store;
+
+export default store;

@@ -1,4 +1,4 @@
-# composition-api-test
+# vue-composition-api-template
 
 ## Project setup
 ```

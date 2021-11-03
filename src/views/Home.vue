@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <h1>{{ name }}</h1>
+    <p>store name: {{ storeName }}</p>
+    <p>route name: {{ routeName }}</p>
   </div>
 </template>
 
@@ -16,12 +17,13 @@ export default defineComponent({
         const route = useRoute();
         const router = useRouter();
 
-        const name = computed(() => store.state.name);
+        const storeName = computed(() => store.state.name);
 
-        console.log(route.name)
+        const routeName = route.name;
 
         return {
-            name
+            storeName,
+            routeName
         }
     },
 })

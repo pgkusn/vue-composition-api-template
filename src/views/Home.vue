@@ -1,18 +1,28 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>{{ name }}</h1>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { computed, defineComponent } from '@vue/composition-api'
+import { useStore } from '../store';
+import { useRoute } from '../router/useRoute';
+import { useRouter } from '../router/useRouter';
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+export default defineComponent({
+    setup() {
+        const store = useStore();
+        const route = useRoute();
+        const router = useRouter();
+
+        const name = computed(() => store.state.name);
+
+        console.log(route.name)
+
+        return {
+            name
+        }
+    },
+})
 </script>
